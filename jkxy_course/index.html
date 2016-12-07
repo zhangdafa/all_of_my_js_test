@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>课程库</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header">
+        <div class="child-header">
+            <a href="http://www.jikexueyuan.com" class="logo">
+                <img src="images/logo.png" height="40px" width="109px" />
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="http://www.jikexueyuan.com" style="color: rgb(53, 181, 88);">首页</a></li>
+                    <li>职业学院
+                        <span class="arrow-icon"></span>
+                        <div class="submenu school-list">
+                            <!-- 前端学院 -->
+                            <h3>前端学院</h3>
+                            <a href="http://www.jikexueyuan.com/zhiye/web">
+                                <span class="web-icon"></span> web 前端工程师
+                            </a>
+                            <!-- 后端学院 -->
+                            <h3>后端学院</h3>
+                            <a href="http://www.jikexueyuan.com/zhiye/python">
+                                <span class="python-icon"></span> Python Web工程师
+                            </a>
+                            <a href="http://www.jikexueyuan.com/zhiye/go">
+                                <span class="go-icon"></span> Go语言工程师
+                            </a>
+                            <!-- 移动学院 -->
+                            <h3>移动学院</h3>
+                            <a href="http://www.jikexueyuan.com/zhiye/ios">
+                                <span class="ios-icon"></span> iOS工程师
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        会员课程
+                        <span class="arrow-icon"></span>
+                        <div class="submenu vip-lesson">
+                            <a href="http://www.jikexueyuan.com/course/">
+                                <span class="kck-icon"></span> 课程库
+                                <i>XXX</i>
+                            </a>
+                            <a href="http://ke.jikexueyuan.com/zhiye/">
+                                <span class="zyljt-icon"></span> 职业路径图
+                                <i>XXX</i>
+                            </a>
+                            <a href="http://www.jikexueyuan.com/path/">
+                                <span class="zstxt-icon"></span> 知识体系图
+                                <i>XXX</i>
+                            </a>
+                            <a href="http://ke.jikexueyuan.com/xilie/">
+                                <span class="xlkc-icon"></span> 系列课程
+                                <i>XXX</i>
+                            </a>
+                            <a href="http://www.jikexueyuan.com/tag/">
+                                <span class="kcbq-icon"></span> 课程标签
+                                <i>XXX</i>
+                            </a>
+                            <a href="http://www.jikexueyuan.com/vip/">
+                                <span class="vip-icon"></span> VIP会员购买
+                                <i>XXX</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        极客社区
+                        <span class="arrow-icon"></span>
+                        <div class="submenu vip-lesson">
+                            <a href="http://wenda.jikexueyuan.com">
+                                <span class="jswd-icon"></span> 技术问答
+                            </a>
+                            <a href="http://wiki.jikexueyuan.com">
+                                <span class="wiki-icon"></span> WiKi
+                            </a>
+                            <a href="http://qun.jikexueyuan.com">
+                                <span class="sq-icon"></span> 社群
+                            </a>
+                            <a href="http://download.jikexueyuan.com">
+                                <span class="zyxz-icon"></span> 资源下载
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 右侧按钮组 -->
+            <div class="icon-box">
+                <span class="search-icon" id="search-btn"></span>
+                <span class="app-icon applist">
+            		<div class="submenu">
+    					<span class="top-icon"></span>
+                <img src="images/heade-rwm.png" />
+            </div>
+            </span>
+            <span class="login-icon applist">
+            		<dl class="submenu">
+            			<span class="top-icon"></span>
+            <dd>
+                <a href="http://passport.jikexueyuan.com/sso/reg_phone" class="reg-btn">注册</a>|
+                <a href="http://passport.jikexueyuan.com/sso/login" class="login-btn">登陆</a>
+            </dd>
+            <dd>
+                <a href="http://passport.jikexueyuan.com/sso/login">
+                    <span class="xxzx-icon"></span> 学习中心
+                </a>
+            </dd>
+            <dd>
+                <a href="http://passport.jikexueyuan.com/sso/login">
+                    <span class="grzy-icon"></span> 个人主页
+                </a>
+            </dd>
+            <dd>
+                <a href="http://passport.jikexueyuan.com/sso/login">
+                    <span class="xxtz-icon"></span> 消息通知
+                </a>
+            </dd>
+            <dd>
+                <a href="http://passport.jikexueyuan.com/sso/login">
+                    <span class="zhsz-icon"></span> 账户设置
+                </a>
+            </dd>
+            </dl>
+            </span>
+        </div>
+    </div>
+    <div class="searchbox" id="searchbox">
+        <span class="close-icon" id="close-icon"></span>
+        <span class="search-icon" id="search-icon"></span>
+        <input id="web_search_header" placeholder="搜索课程、问答或Wiki">
+        <div class="tagbox">
+            <a href="http://search.jikexueyuan.com/course/?q=Android">Android</a>
+            <a href="http://search.jikexueyuan.com/course/?q=iOS">IOS</a>
+            <a href="http://search.jikexueyuan.com/course/?q=HTML5">Html5</a>
+        </div>
+    </div>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 内容 -->
+    <div id="pager">
+        <!-- crumbs -->
+        <div class="crumbs">
+            <a href="#">首页</a>
+            <em>></em>
+            <a href="#">课程库</a>
+        </div>
+        <!-- wrap -->
+        <div class="wrap">
+            <div id="main">
+                <div class="sort">
+                    <div class="sortMode">
+                        <h3>全部课程</h3>
+                        <dl>
+                            <dt>
+                                <span>最新</span>
+                                <span class="arrow-icon"></span>
+                            </dt>
+                            <dd>
+                                <a href="#">最新</a>
+                                <a href="#">最热</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>课程类型</span>
+                                <span class="arrow-icon"></span>
+                            </dt>
+                            <dd>
+                                <a href="#">VIP</a>
+                                <a href="#">免费</a>
+                                <a href="#">认证专享</a>
+                                <a href="#">全部</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>内容类型</span>
+                                <span class="arrow-icon"></span>
+                            </dt>
+                            <dd>
+                                <a href="#">知识精讲</a>
+                                <a href="#">项目实战</a>
+                                <a href="#">全部</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>难度等级</span>
+                                <span class="arrow-icon"></span>
+                            </dt>
+                            <dd>
+                                <a href="#">初级</a>
+                                <a href="#">中级</a>
+                                <a href="#">高级</a>
+                                <a href="#">全部</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="previewMode">
+                        <ul>
+                            <!-- 快捷模式 -->
+                            <li class="kuai-icon" id="kuai-icon"><i></i></li>
+                            <!-- 列表模式 -->
+                            <li class="list-icon" id="list-icon"><i></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lesson-list" id="lesson-list">
+                    <ul>
+                        <li>
+                            <div class="lesson-img-box">
+                                <a href="#">
+                                    <img src="images/581ae2cb75899.jpg">
+                                    <div class="lesson-play"><i></i></div>
+                                </a>
+                            </div>
+                            <div class="lesson-info">
+                                <h2><a href="#">腾讯大咖分享 - 腾讯大咖分享之技术交流</a></h2>
+                                <p>
+                                    本课程主要是腾讯大咖与大家分享一些技术经验与心得。
+                                </p>
+                                <div class="timeandicon">
+                                    <div class="time cf">
+                                        <dl>
+                                            <dd class="mar-b8">
+                                                <i class="time-icon"></i>
+                                                <span>6课时 122分钟</span>
+                                            </dd>
+                                            <dd class="zhongji">
+                                                <i class="xinhao-icon"></i>
+                                                <span>高级</span>
+                                            </dd>
+                                        </dl>
+                                        <span class="learn-num">2251人学习</span>
+                                    </div>
+                                    <div class="icon cf">
+                                        <a href="#">
+                                            <img src="images/572318c5ac303.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lesson-img-box">
+                                <a href="#">
+                                    <img src="images/581ae2cb75899.jpg">
+                                    <div class="lesson-play"><i></i></div>
+                                </a>
+                            </div>
+                            <div class="lesson-info">
+                                <h2><a href="#">腾讯大咖分享 - 腾讯大咖分享之技术交流</a></h2>
+                                <p>
+                                    本课程主要是腾讯大咖与大家分享一些技术经验与心得。
+                                </p>
+                                <div class="timeandicon">
+                                    <div class="time cf">
+                                        <dl>
+                                            <dd class="mar-b8">
+                                                <i class="time-icon"></i>
+                                                <span>6课时 122分钟</span>
+                                            </dd>
+                                            <dd class="zhongji">
+                                                <i class="xinhao-icon"></i>
+                                                <span>高级</span>
+                                            </dd>
+                                        </dl>
+                                        <span class="learn-num">2251人学习</span>
+                                    </div>
+                                    <div class="icon cf">
+                                        <a href="#">
+                                            <img src="images/572318c5ac303.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lesson-img-box">
+                                <a href="#">
+                                    <img src="images/581ae2cb75899.jpg">
+                                    <div class="lesson-play"><i></i></div>
+                                </a>
+                            </div>
+                            <div class="lesson-info">
+                                <h2><a href="#">腾讯大咖分享 - 腾讯大咖分享之技术交流</a></h2>
+                                <p>
+                                    本课程主要是腾讯大咖与大家分享一些技术经验与心得。
+                                </p>
+                                <div class="timeandicon">
+                                    <div class="time cf">
+                                        <dl>
+                                            <dd class="mar-b8">
+                                                <i class="time-icon"></i>
+                                                <span>6课时 122分钟</span>
+                                            </dd>
+                                            <dd class="zhongji">
+                                                <i class="xinhao-icon"></i>
+                                                <span>高级</span>
+                                            </dd>
+                                        </dl>
+                                        <span class="learn-num">2251人学习</span>
+                                    </div>
+                                    <div class="icon cf">
+                                        <a href="#">
+                                            <img src="images/572318c5ac303.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="lesson-img-box">
+                                <a href="#">
+                                    <img src="images/581ae2cb75899.jpg">
+                                    <div class="lesson-play"><i></i></div>
+                                </a>
+                            </div>
+                            <div class="lesson-info">
+                                <h2><a href="#">腾讯大咖分享 - 腾讯大咖分享之技术交流</a></h2>
+                                <p>
+                                    本课程主要是腾讯大咖与大家分享一些技术经验与心得。
+                                </p>
+                                <div class="timeandicon">
+                                    <div class="time cf">
+                                        <dl>
+                                            <dd class="mar-b8">
+                                                <i class="time-icon"></i>
+                                                <span>6课时 122分钟</span>
+                                            </dd>
+                                            <dd class="zhongji">
+                                                <i class="xinhao-icon"></i>
+                                                <span>高级</span>
+                                            </dd>
+                                        </dl>
+                                        <span class="learn-num">2251人学习</span>
+                                    </div>
+                                    <div class="icon cf">
+                                        <a href="#">
+                                            <img src="images/572318c5ac303.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- 图片部分 -->
+                            <div class="lesson-img-box">
+                                <a href="#">
+                                    <img src="images/581ae2cb75899.jpg">
+                                    <div class="lesson-play"><i></i></div>
+                                </a>
+                            </div>
+                            <!-- 文字部分 -->
+                            <div class="lesson-info">
+                                <h2><a href="#">腾讯大咖分享 - 腾讯大咖分享之技术交流</a></h2>
+                                <p>
+                                    本课程主要是腾讯大咖与大家分享一些技术经验与心得。
+                                </p>
+                                <div class="timeandicon">
+                                    <div class="time cf">
+                                        <dl>
+                                            <dd class="mar-b8">
+                                                <i class="time-icon"></i>
+                                                <span>6课时 122分钟</span>
+                                            </dd>
+                                            <dd class="zhongji">
+                                                <i class="xinhao-icon"></i>
+                                                <span>高级</span>
+                                            </dd>
+                                        </dl>
+                                        <span class="learn-num">2251人学习</span>
+                                    </div>
+                                    <div class="icon cf">
+                                        <a href="#">
+                                            <img src="images/572318c5ac303.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="page-nav">
+                    <ul class="pages">
+                        <li class="pgNext">首页</li>
+                        <li class="pgNext">上一页</li>
+                        <li class="pgCurrent pgNumber">1</li>
+                        <li class="pgNumber">2</li>
+                        <li class="pgNumber">3</li>
+                        <li class="pgNumber">4</li>
+                        <li class="pgNumber">5</li>
+                        <li class="pgNumber">6</li>
+                        <li class="pgNumber">7</li>
+                        <li>...</li>
+                        <li class="pgNext">下一页</li>
+                        <li class="pgNext">末页</li>
+                        <li class="pgTotal">共 95 页</li>
+                        <li class="pgNow">
+                            当前
+                            <input type="text" value="1" id="gotoVal" /> 页
+                        </li>
+                        <li class="go">确定</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="aside">
+                <div class="aside-allCategory">
+                    <!-- 标题 -->
+                    <div class="hd">
+                        <a href="#">
+                            <i class="hd-icon"></i> 课程库
+                        </a>
+                    </div>
+                    <!-- 分类 -->
+                    <div class="bd">
+                        <ul class="bd-list">
+                            <li>
+                                <div>
+                                    <a href="#">移动开发</a>
+                                    <div class="list-show" style="top:-45px;">
+                                        <dl>
+                                            <dt><a href="#">应用开发</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">应用开发</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">前端开发</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">前端基础</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">前端进阶</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">后端开发</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">Python</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">PHP</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">基础知识</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">基础语言</a></dt>
+                                            <dd>
+                                                <a href="#">C</a>
+                                                <a href="#">C++</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">计算机基础</a></dt>
+                                            <dd>
+                                                <a href="#">计算机组成原理</a>
+                                                <a href="#">网络工程</a>
+                                                <a href="#">Word</a>
+                                                <a href="#">Excl</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">云计算</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">云计算</a></dt>
+                                            <dd>
+                                                <a href="#">OpenStack</a>
+                                                <a href="#">Docker</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">大数据</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">智能硬件</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">智能硬件</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">智能硬件</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">数据库</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">数据库基础</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">数据库进阶</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">认证考试</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">认证考试</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">认证考试</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">企业IT</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">企业IT</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">企业IT</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#">设计&产品&测试</a>
+                                    <div class="list-show">
+                                        <dl>
+                                            <dt><a href="#">应用开发</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><a href="#">应用开发</a></dt>
+                                            <dd>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                                <a href="#">Android</a>
+                                                <a href="#">IOS</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 标题列表 -->
+                <ul class="hdlist">
+                    <li>
+                        <a href="#">
+                            <i class="icon-zylj"></i> 职业路径图
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-zstx"></i> 知识体系图
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-xlkc"></i> 系列课程
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-kcbq"></i> 课程标签
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 内容结束 -->
+    <!-- 尾部 -->
+    <div id="footer">
+        <div class="jkinfor-block">
+            <div class="jkinfor cf">
+                <div class="jk-logo">
+                    <img src="images/jk-logo-footer.png" />
+                    <p>极客学院，编程是一种信仰！</p>
+                </div>
+                <dl>
+                    <dt>职业学院</dt>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/web">Web前端工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/python">PythonWeb工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/go">Go语言工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/ios">ios工程师</a></dd>
+                </dl>
+                <dl>
+                    <dt>职业学院</dt>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/web">Web前端工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/python">PythonWeb工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/go">Go语言工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/ios">ios工程师</a></dd>
+                </dl>
+                <dl>
+                    <dt>职业学院</dt>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/web">Web前端工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/python">PythonWeb工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/go">Go语言工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/ios">ios工程师</a></dd>
+                </dl>
+                <dl>
+                    <dt>职业学院</dt>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/web">Web前端工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/python">PythonWeb工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/go">Go语言工程师</a></dd>
+                    <dd><a href="http://www.jikexueyuan.com/zhiye/ios">ios工程师</a></dd>
+                </dl>
+                <div class="jk-down">
+                    <p class="hot-tel">服务热线:400-678-8266</p>
+                    <div class="downCon down-ios">
+                        <img src="images/iosapp.png"> iPhone
+                    </div>
+                    <div class="downCon down-and">
+                        <img src="images/iosapp.png"> Android
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2013-2016
+            <strong>
+        		<a href="http://www.jikexueyuan.com/">jikexueyuan.com</a>
+        	</strong> All Rights Reserved. 京ICP备11018032号-8 京公网安备11010802020210
+            <a href="http://qun.jikexueyuan.com/jikexueyuan/topic/430" class="down-wechat"></a>
+            <a href="http://weibo.com/jikexueyuan" class="down-sina"></a>
+            <a href="https://credit.szfw.org/CX20160908025320080267.html" style="display:block; margin: 15px auto 0;">
+                <img src="images/cert.png" width="60px">
+            </a>
+        </div>
+    </div>
+    <!-- 尾部结束 -->
+    <div class="goTop">
+    	<span class="top"></span>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

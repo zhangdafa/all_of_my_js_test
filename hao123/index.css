@@ -1,0 +1,556 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+textarea,
+p,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/100% arial, "Hiragino Sans GB", "Hiragino Sans GB W3", \5b8b\4f53;
+    /*background-color: #f7f7f8;*/
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    color: #f50;
+    text-decoration: underline;
+}
+
+input,
+button {
+    border: 0;
+}
+
+#container {
+    height: auto;
+    min-width: 1190px;
+    position: relative;
+}
+
+
+/*工具栏*/
+
+.hao123-tools-wrap {
+    height: 61px;
+    width: 100%;
+    position: relative;
+    z-index: 120;
+}
+
+.hao123-tools {
+    height: 60px;
+    width: 1190px;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 22px;
+    clear: both;
+    position: relative;
+    z-index: 996;
+    font-family: 'Tahoma';
+    border-bottom: 1px solid #f7f7f7;
+}
+
+
+/*logo*/
+
+.hao123-logo {
+    float: left;
+    width: 168px;
+    height: 60px;
+    z-index: 20;
+    margin-right: 24px;
+    position: relative;
+}
+
+.hao123-logo a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*设置首页*/
+
+.sethome {
+    width: 25px;
+    position: absolute;
+    top: 0;
+    line-height: 1.4;
+    margin-top: 13px;
+    margin-right: 22px;
+    padding: 2px 5px;
+    display: block;
+    float: left;
+    color: #fff;
+    z-index: 30;
+    text-align: center;
+    background: #07ac72;
+    border-radius: 2px;
+    left: 168px;
+}
+
+a.sethome:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*提示栏*/
+
+.hao123-col {
+    float: left;
+}
+
+
+/*.hao123-col:hover {
+    background-color: #f7f7f7;
+}*/
+
+.hao123-col .link:hover {
+    background-color: #f7f7f7;
+    text-decoration: none;
+    filter: none;
+    color: #999;
+}
+
+
+/*天气*/
+
+.hao123-col .colweather {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 13px;
+    cursor: pointer;
+}
+
+.colweahter-city {
+    padding-left: 9px;
+    height: 60px;
+    line-height: 60px;
+    padding-right: 10px;
+    color: #999;
+}
+
+
+/*城市*/
+
+.colweahter-city {
+    padding-left: 9px;
+    height: 60px;
+    line-height: 60px;
+    padding-right: 10px;
+    color: #999;
+    display: inline-block;
+}
+
+.hao123-col span {
+    display: inline-block;
+}
+
+.weahtercity-arrow {
+    width: 9px;
+    height: 6px;
+    background: url(images/index_widthlg.png) no-repeat -52px -97px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+
+/*pm25*/
+
+.colweahter-pm25 {
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: top;
+}
+
+.pm25-text {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 2px;
+}
+
+
+/*info*/
+
+.colweahter-info {
+    padding-right: 10px;
+    color: #999;
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.weahterinfo-icon {
+    line-height: 60px;
+    vertical-align: middle;
+    width: 26px;
+    height: 60px;
+    background-position: 0 14px;
+    background-repeat: no-repeat;
+    background-image: url(images/a9.png);
+}
+
+.weahterinfo-txt {
+    margin-left: 4px;
+}
+
+.weahterinfo-temperature {
+    font-family: 'arial';
+    margin-left: 8px;
+}
+
+
+/*天气栏结束*/
+
+
+/*日历*/
+
+.colcalendar {
+    position: relative;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    width: 110px;
+    height: 60px;
+}
+
+.colcalendar-info {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    color: #999;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cal-link {
+    color: #999;
+    display: inline-block;
+}
+
+
+/*日历 结束*/
+
+
+/*星座*/
+
+.hao123-star {
+    display: block;
+    position: relative;
+    text-align: center;
+    float: left;
+    _width: 80px;
+    margin-left: 2px;
+    height: 60px;
+}
+
+.star-link {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    line-height: 62px \9;
+    color: #999;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+
+/*星座结束*/
+
+
+/*hao123 links*/
+
+.hao123-links {
+    float: right;
+    height: 60px;
+    padding: 0 129px 0 0;
+}
+
+.hao123-links span {
+    display: inline-block;
+    height: 60px;
+    overflow: hidden;
+    vertical-align: top;
+    position: relative;
+}
+
+.hao123-links span a {
+    padding: 0 8px 0 6px;
+    line-height: 60px;
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hao123-links a:hover {
+    color: #999;
+    text-decoration: none;
+    background-color: #f7f7f7;
+}
+
+.loginlink {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.login {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    line-height: 60px;
+    padding-left: 33px;
+    padding-right: 9px;
+    color: #999;
+    background-image: url(images/index_widthlg.png);
+    background-repeat: no-repeat;
+    background-position: -30px -110px;
+    z-index: 11;
+}
+
+
+/*提示栏结束*/
+
+
+/*search*/
+
+.hao123-search-panel-box {
+    height: 82px;
+}
+
+.hao123-search-panel {
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 110;
+    height: 41px;
+    padding: 27px 0 0 166px;
+}
+
+.search {
+    width: 800px;
+    display: inline-block;
+}
+
+.bd-logo {
+    width: 120px;
+    height: 40px;
+    margin: 4px 30px 0 -26px;
+    float: left;
+}
+
+.bd-logo a span {
+    background: url(images/index_widthlg.png) -10px -212px no-repeat;
+    width: 120px;
+    height: 40px;
+    display: block;
+}
+
+.input-shadow {
+    width: 538px;
+    height: 44px;
+    border: 1px solid #666;
+    border-right: 0;
+    background: #fff;
+    display: inline-block;
+    margin-right: -4px;
+}
+
+.input {
+    width: 538px;
+    height: 18px;
+    padding: 10px 0;
+    border: 0;
+    font: 16px arial;
+    display: inline-block;
+}
+
+input,
+button:focus {
+    outline: 0;
+}
+
+.button-wrapper {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.button {
+    width: 120px;
+    height: 46px;
+    background: url(images/index_widthlg.png) no-repeat -211px -180px;
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*change*/
+
+.change {
+    display: inline-block;
+    position: relative;
+    padding-top: 5px;
+}
+
+.green {
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    background-color: #07ac72;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.red {
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    background-color: #ff0000;
+    display: inline-block;
+}
+
+
+/*search end*/
+
+
+/*body*/
+
+.hao123-bodyct {
+    position: relative;
+}
+
+.menus {
+    border: 0px;
+    margin-bottom: 10px;
+    height: 38px;
+    background-color: #fcfcfc;
+    margin: 0 auto;
+    border-top: 2px solid #07ac72;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 0;
+    border-right: 0;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    width: 1190px;
+}
+
+ol,
+ul,
+dl {
+    list-style: none;
+}
+
+.menu {
+    width: 111px;
+    height: 38px;
+    line-height: 38px;
+    width: 110px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.first {
+    width: 81px;
+}
+
+.last {
+    width: 110px;
+}
+
+.last:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
+}
+
+.menus .link {
+    border-right: 0;
+    text-align: center;
+    color: #333;
+    position: relative;
+    font-family: Microsoft Yahei;
+    font-size: 16px;
+    display: block;
+    height: 100%;
+    cursor: pointer;
+}
+
+.menu-split {
+    display: block;
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(images//menus_split.png) center left no-repeat;
+}
+
+.first .active {
+    background-color: #07ac72;
+    cursor: pointer;
+    color: #fff;
+}
+
+.contentBody {
+    width: 1190px;
+    margin: 30px auto;
+    border: 0;
+    clear: both;
+    text-align: center;
+    color: #07ac72;
+    font-size: 30px;
+}
+
+.contentBody .leftContent {
+    width: 280px;
+    height: 300px;
+    float: left;
+    position: relative;
+    border: 1px solid #07ac72;
+    margin-right: 50px;
+    line-height: 300px;
+}
+
+.contentBody .rightContent {
+    width: 600px;
+    height: 300px;
+    line-height: 300px;
+    float: left;
+    position: relative;
+    border: 1px solid #07ac72;
+}
