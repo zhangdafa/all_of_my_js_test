@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的学习</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function valueOftest(regExpObj, obj) {
+        console.log(regExpObj + ".test(\'" + obj + "\') return", regExpObj.test(obj));
+    }
+    //1.匹配规则
+    //(1)点字符(.) 匹配除回车（\r）、换行(\n) 、行分隔符（\u2028）和段分隔符（\u2029）以外的所有字符。
+    valueOftest(/c.t/, "cat"); //true  c.t匹配c和t之间包含任意一个字符的情况，只要这三个字符在同一行
+    valueOftest(/c.t/, "coot"); //false
+    //（2）位置字符
+    // ^ 表示字符串的开始位置
+    // $ 表示字符串的结束位置
+    valueOftest(/^test$/, "test"); //true
+    valueOftest(/^test$/, "test test"); //false 从开始位置到结束位置只有test
+    //（3）选择符（|）
+    valueOftest(/a( |\t)b/, "a\tb"); //true
+    //2.转义符
+    // 正则模式中，需要用斜杠转义的，一共有12个字符：
+    //^、.、[、$、(、)、|、*、+、?、{和\\。需要特别注意的是，
+    //如果使用RegExp方法生成正则对象，转义需要使用两个斜杠，因为字符串内部会先转义一次。
+
+    //3.特殊字符
+    // \cX 表示Ctrl-[X]，其中的X是A-Z之中任一个英文字母，用来匹配控制字符。
+    // [\b] 匹配退格键(U+0008)，不要与\b混淆。
+    // \n 匹配换行键。
+    // \r 匹配回车键。
+    // \t 匹配制表符tab（U+0009）。
+    // \v 匹配垂直制表符（U+000B）。
+    // \f 匹配换页符（U+000C）。
+    // \0 匹配null字符（U+0000）。
+    // \xhh 匹配一个以两位十六进制数（\x00-\xFF）表示的字符。
+    // \uhhhh 匹配一个以四位十六进制数（\u0000-\uFFFF）表示的unicode字符。
+    //4.字符类
+    // 字符类（class）表示有一系列字符可供选择，只要匹配其中一个就可以了。所有可供选择的字符都放在方括号内，比如[xyz] 表示x、y、z之中任选一个匹配。
+    valueOftest(/[abc]/, "apple"); //true
+    //有两个字符在字符类中有特殊含义
+    //（1）脱字符（^）
+    valueOftest(/[^abc]/, "abc"); //false  除了字符类中的字符都匹配
+    //注意，脱字符只有在字符类的第一个位置才有特殊含义，否则就是字面含义。
+    //（2）连字符（-）
+    valueOftest(/[a-z]/, "b"); //ture
+    valueOftest(/a-z/, "b"); //false
+    //5.预定义模式
+    // \d 匹配0-9之间的任一数字，相当于[0-9]。
+    // \D 匹配所有0-9以外的字符，相当于[^0-9]。
+    // \w 匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。
+    // \W 除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。
+    // \s 匹配空格（包括制表符、空格符、断行符等），相等于[\t\r\n\v\f]。
+    // \S 匹配非空格的字符，相当于[^\t\r\n\v\f]。
+    // \b 匹配词的边界。
+    // \B 匹配非词边界，即在词的内部。
+    valueOftest(/\D/, "abc"); //true
+    valueOftest(/\bworld/, "hello world"); //true
+    //6.重复类
+    //模式的精确匹配次数，使用大括号（{}）表示。{n}表示恰好重复n次，{n,}表示至少重复n次，{n,m}表示重复不少于n次，不多于m次。
+    valueOftest(/lo{2}k/, "look"); //true
+    valueOftest(/lo{2,5}k/, "loook"); //true
+    //7.量词符
+    // ? 问号表示某个模式出现0次或1次，等同于{0, 1}。
+    // * 星号表示某个模式出现0次或多次，等同于{0,}。
+    // + 加号表示某个模式出现1次或多次，等同于{1,}。
+    valueOftest(/t?est/, "est"); //true
+    valueOftest(/t*est/, "tttest"); //true
+    valueOftest(/t+est/, "est"); //false
+    //8.贪婪模式 默认匹配最大化，非贪婪模式在量词后添加?
+    //9.修饰符
+    //g修饰符 全局匹配
+    //i修饰符 忽略大小写
+    //m修饰符 多行模式，修改^和$的行为，变为行首和行尾，默认情况下正则表达式匹配忽略换行符
+    valueOftest(/world$/m, "hello world\n"); //true
+    //10.组匹配 ()
+    // 正则表达式的括号表示分组匹配，括号中的模式可以用来匹配分组的内容。
+    valueOftest(/(feed)+/, "feedfeedfeed"); //true
+    //分组捕获
+    var m = 'abcabc'.match(/(.)b(.)/);
+    console.log(m); //["abc","a","c"] 注意，使用组匹配时，不宜同时使用g修饰符，否则match方法不会捕获分组的内容。
+    //在正则表达式中可以使用\n来表达捕获的值,如\1
+    valueOftest(/(.)\1/, "aa"); //true
+    var html = '<b class="hello">Hello</b><i>world</i>';
+    var tag = /<(\w+)([^>]*)>(.*?)<\/\1>/g;
+
+    var match = tag.exec(html);
+    console.log(match[0]); //exec函数返回的是一个数组，第一个成员是匹配的字符串，后面的成员是捕获的字符串
+    console.log(match[1]); // "b"
+    console.log(match[2]); // "class="hello""
+    console.log(match[3]); // "Hello"
+
+    match = tag.exec(html);
+
+    console.log(match[1]); // "i"
+    console.log(match[2]); // ""
+    console.log(match[3]); // "world"
+    //(2)非捕获组 (?:x)  不捕获内容
+    var m = "abc".match(/(?:.)b(.)/);
+    console.log(m); //["abc","c"];
+    var url = /(http|ftp):\/\/([^\/\r\n]+)(\/[^\r\n]*)?/;
+
+    console.log(url.exec('http://google.com/'));
+    //(3)先行断言 x(?=y)  匹配x后面是y的内容，y 不会被捕获
+    valueOftest(/Hello (?=world)/,"Hello world"); //true
+    //(4)先行否定断言 x(?!y) 匹配x后面不是y的内容
+    var m="hello dafa".match(/hello (?!zjj)/); 
+    console.log(m); //"hello "
+    </script>
+</body>
+
+</html>
